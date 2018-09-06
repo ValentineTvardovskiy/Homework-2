@@ -59,7 +59,8 @@ public class Main {
     }
 
     public static void frequency(char ch, String str) {
-
+        
+        //int frequency = str.chars().filter(char -> char == ch).count();
         char[] chars2 = str.toCharArray();
         int frequency = 0;
 
@@ -67,6 +68,5 @@ public class Main {
             if (ch == chars2[i]) frequency++;
         }
         System.out.println(frequency);
-
     }
 }
