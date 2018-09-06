@@ -19,7 +19,8 @@ public class Main {
             switch (option) {
                 case 1:
                     System.out.println("Enter string");
-                    palindrome(input.next());
+                    if (isPalindrome(input.next())) System.out.println("is palindrome");
+                    else System.out.println("isn't palindrome");
                     break;
                 case 2:
                     System.out.println("Enter i, j and string");
@@ -30,15 +31,17 @@ public class Main {
                     frequency(input.next().charAt(0), input.next());
                     break;
             }
-        }while (option != -1);
+        } while (option != -1);
 
     }
 
-    public static void palindrome(String s) {
-        if (s.equals(new StringBuilder(s).reverse().toString()))
-            System.out.println("is palindrome");
-        else
-            System.out.println("isn't palindrome");
+    public static boolean isPalindrome(String s) {
+
+        for (int i = 0; i < s.length() / 2; i++) {
+            if (s.charAt(i) == s.charAt(s.length() - i - 1))
+                return true;
+        }
+        return false;
     }
 
     public static void reverse(int i, int j, String str) {
@@ -58,12 +61,12 @@ public class Main {
     public static void frequency(char ch, String str) {
 
         char[] chars2 = str.toCharArray();
-        int frequency  = 0;
+        int frequency = 0;
 
         for (int i = 0; i < chars2.length; i++) {
             if (ch == chars2[i]) frequency++;
         }
-        System.out.println(frequency );
+        System.out.println(frequency);
 
     }
 }
