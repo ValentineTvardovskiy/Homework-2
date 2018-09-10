@@ -6,32 +6,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("For task-1 enter 1");
-        System.out.println("For task-2 enter 2");
-        System.out.println("For task-3 enter 3");
-        System.out.println("For exit enter -1");
-
         Scanner input = new Scanner(System.in);
-        int option;
-        do {
-            System.out.println("Choose task: ");
-            option = input.nextInt();
-            switch (option) {
-                case 1:
-                    System.out.println("Enter string");
-                    if (isPalindrome(input.next())) System.out.println("is palindrome");
-                    else System.out.println("isn't palindrome");
-                    break;
-                case 2:
-                    System.out.println("Enter i, j and string");
-                    reverse(input.nextInt(), input.nextInt(), input.next());
-                    break;
-                case 3:
-                    System.out.println("Enter char and string");
-                    frequency(input.next().charAt(0), input.next());
-                    break;
-            }
-        } while (option != -1);
+
+        System.out.println("Enter string");
+        if (isPalindrome(input.next())) System.out.println("is palindrome");
+        else System.out.println("isn't palindrome");
+
+        System.out.println("Enter i, j and string");
+        reverse(input.nextInt(), input.nextInt(), input.next());
+
+        System.out.println("Enter char and string");
+        frequency(input.next().charAt(0), input.next());
 
     }
 
@@ -59,8 +44,7 @@ public class Main {
     }
 
     public static void frequency(char ch, String str) {
-        
-        //int frequency = str.chars().filter(char -> char == ch).count();
+
         char[] chars2 = str.toCharArray();
         int frequency = 0;
 
